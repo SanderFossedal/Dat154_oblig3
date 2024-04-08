@@ -1,0 +1,28 @@
+﻿<Window x:Class="Dat154_oblig3.GradesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dat154_oblig3"
+        mc:Ignorable="d"
+        Title="GradesWindow" Height="450" Width="800">
+    <Grid>
+        <ListView Name="gradesList" ItemsSource ="{Binding}" Margin="0,72,0,0" MouseDoubleClick="gradeList_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width ="150" Header="Student name" DisplayMemberBinding="{Binding Path=Studentname}" />
+                        <GridViewColumn Width ="150" Header="Student id" DisplayMemberBinding="{Binding Path=Studentid}" />
+                        <GridViewColumn Width ="100" Header="Course name" DisplayMemberBinding="{Binding Path=Coursename}" />
+                        <GridViewColumn Width ="150" Header="Course code" DisplayMemberBinding="{Binding Path=Coursecode}" />
+                        <GridViewColumn Width ="100" Header="Grade" DisplayMemberBinding="{Binding Path=Grade1}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Name="searchField" HorizontalAlignment="Left" Height="23" Margin="32,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115"/>
+        <Button Name="searchButton" Content="Search" HorizontalAlignment="Left" Margin="165,27,0,0" VerticalAlignment="Top" Click="SearchButton_Click"/>
+        <Button Name="backButton" Content="Back" HorizontalAlignment="Left" Margin="235,27,0,0" VerticalAlignment="Top" Click="backButton_Click"/>
+
+    </Grid>
+</Window>
